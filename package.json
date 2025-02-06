@@ -1,10 +1,12 @@
-{
+{ "name": "my-interactive-website",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Building project'"
+  },
   "devDependencies": {
     "eslint": "^9.19.0",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
   }
-  "scripts": {
-    "build": "echo 'No build step defined'"
-  }
+  
 }
