@@ -3,7 +3,11 @@
   "scripts": {
     "build": "echo 'Building project'"
   },
-  "devDependencies": {
+   "scripts": {
+    "build": "echo 'Building project'",
+    "test": "echo 'No tests specified' && exit 0"}
+  },
+   "devDependencies": {
     "eslint": "^9.19.0",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
