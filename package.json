@@ -1,8 +1,8 @@
 { "name": "my-interactive-website",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo 'Building project'"
-    "test": "echo 'Running tests...' && exit 0",  
+    "build": "echo 'Building project'",
+    "test": "echo 'Running tests...' && exit 0",
     "deploy": "npm run build && echo 'Deploying application...'"  
   },
      "devDependencies": {
