@@ -2,11 +2,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "echo 'Building project'"
+    "test": "echo 'Running tests...' && exit 0",  
+    "deploy": "npm run build && echo 'Deploying application...'"  
   },
-   "scripts": {
-    "build": "echo 'Building project'",
-    "test": "echo 'No tests specified' && exit 0"}
-  },
+   
    "devDependencies": {
     "eslint": "^9.19.0",
     "stylelint": "^16.14.1",
