@@ -6,8 +6,5 @@
   }
   "scripts": {
     "build": "echo 'No build step defined'"
-  },
-  "dependencies": {
-    // Your dependencies will go here
   }
 }
