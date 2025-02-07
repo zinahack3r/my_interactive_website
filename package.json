@@ -1,8 +1,15 @@
-{
-  "devDependencies": {
+{ "name": "my-interactive-website",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Building project'",
+    "test": "echo 'Running tests...' && exit 0",
+    "deploy": "npm run build && echo 'Deploying application...'"  
+  },
+     "devDependencies": {
     "eslint": "^9.19.0",
     "jest": "^29.7.0",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
   }
+  
 }
