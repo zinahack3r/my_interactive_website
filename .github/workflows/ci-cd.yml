@@ -1,27 +1,30 @@
-name: Build and Push Docker Image
+name: CI/CD Pipeline
 
+# Trigger the workflow on push or pull request to the main branch
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      # Checkout the repository code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Log in to DockerHub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      # Set up Node.js (example for a Node.js project; adjust as needed)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # or whichever version you need
 
-      - name: Build Docker Image
-        run: docker build -t dockliver/my_interactive_website:latest .
-
-      - name: Push Docker Image to DockerHub
-        run: docker push dockliver/my_interactive_website:latest
-
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
       # Run build script (if applicable)
       - name: Build
@@ -53,3 +56,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Example: Deploy using Docker (update this section for your deployment needs)
+      - name: Build Docker image
+        run: docker build -t your-dockerhub-username/your-app:latest .
+
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push Docker image
+        run: docker push your-dockerhub-username/your-app:latest
